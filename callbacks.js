@@ -10,12 +10,13 @@ function getPosts() {
     // setTimeout function to simulate time to get posts
     setTimeout(() => {
         
-        // Empty variable
+        // Empty variable to hold posts
         let output = '';
 
-        // Foreach loop
+        // Foreach loop that displays each post
         posts.forEach((post, index) => {
 
+            // Post Title
             output += `<li>${post.title}</li>`
 
         });
