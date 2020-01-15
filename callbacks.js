@@ -29,20 +29,38 @@ function getPosts() {
 }
 
 // Function to create a new post
-function createPosts(post) {
+// function createPosts(post) {
+
+//     // setTimeout function to simulate time to create a post
+//     setTimeout(() => {
+        
+//         // Empty variable to hold posts
+//         posts.push(post);
+
+//     }, 2000);
+
+// }
+
+// Function to create a new post with callback
+function createPosts(post, callback) {
 
     // setTimeout function to simulate time to create a post
     setTimeout(() => {
         
         // Empty variable to hold posts
         posts.push(post);
+        // Callback function to make sure getPosts runs after a new post is created
+        callback();
 
     }, 2000);
 
 }
 
 // Runs getPosts function
-getPosts();
+// getPosts();
 
 // Runs createPosts function
-createPosts({ title: 'Post Three', body: 'This is post three' });
+// createPosts({ title: 'Post Three', body: 'This is post three' });
+
+// Runs createPosts function with callback
+createPosts({ title: 'Post Three', body: 'This is post three' }, getPosts);
