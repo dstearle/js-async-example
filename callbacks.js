@@ -28,5 +28,21 @@ function getPosts() {
 
 }
 
+// Function to create a new post
+function createPosts(post) {
+
+    // setTimeout function to simulate time to create a post
+    setTimeout(() => {
+        
+        // Empty variable to hold posts
+        posts.push(post);
+
+    }, 2000);
+
+}
+
 // Runs getPosts function
 getPosts();
+
+// Runs createPosts function
+createPosts({ title: 'Post Three', body: 'This is post three' });
