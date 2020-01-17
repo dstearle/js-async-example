@@ -89,15 +89,34 @@ function createPost(post) {
 // *** Async / Await Example ***
 
 // Asynchrous function that waits for the post to be created before retrieving all of the posts
-async function init() {
+// async function init() {
 
-    // The post to be created prior to the retrieval
-    await createPost({ title: 'Post Three', body: 'This is post three' });
+//     // The post to be created prior to the retrieval
+//     await createPost({ title: 'Post Three', body: 'This is post three' });
 
-    // Returns all posts after the 'await' above has been done
-    getPosts();
+//     // Returns all posts after the 'await' above has been done
+//     getPosts();
+
+// }
+
+// // Runs the async function
+// init();
+
+// *** Async / Await / Fetch Example ***
+
+// Async function using fetch
+async function fetchUsers() {
+
+    // Returns an array of data objects
+    const res = await fetch('https://jsonplaceholder.typicode.com/users');
+
+    // Turs fetched data into json object
+    const data = await res.json();
+
+    // Outputs retrieved data objects to console
+    console.log(data);
 
 }
 
-// Runs the async function
-init();
+// Runs the function
+fetchUsers();
