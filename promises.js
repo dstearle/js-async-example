@@ -62,3 +62,6 @@ function createPosts(post) {
     });
 
 }
+
+// Runs createPosts function with promise
+createPosts({ title: 'Post Three', body: 'This is post three' }).then(getPosts);
