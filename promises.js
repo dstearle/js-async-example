@@ -31,12 +31,34 @@ function getPosts() {
 // Function to create a new post
 function createPosts(post) {
 
-    // setTimeout function to simulate time to create a post
-    setTimeout(() => {
-        
-        // Empty variable to hold posts
-        posts.push(post);
+    // Promise
+    return new Promise((resolve, reject) => {
 
-    }, 2000);
+        // setTimeout function to simulate time to create a post
+        setTimeout(() => {
+            
+            // Empty variable to hold posts
+            posts.push(post);
+
+            // Boolean
+            const error = false;
+
+            // If no errors then
+            if(!error) {
+
+                resolve();
+
+            }
+
+            // Else show error
+            else {
+
+                reject('Error: Something went wrong!');
+
+            }
+
+        }, 2000);
+
+    });
 
 }
