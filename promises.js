@@ -54,7 +54,7 @@ function createPosts(post) {
             // Else show error
             else {
 
-                // When reject runs .then(getPosts) does not run
+                // When reject runs .catch(...) occurs
                 reject('Error: Something went wrong!');
 
             }
@@ -66,4 +66,6 @@ function createPosts(post) {
 }
 
 // Runs createPosts function with promise
-createPosts({ title: 'Post Three', body: 'This is post three' }).then(getPosts);
+createPosts({ title: 'Post Three', body: 'This is post three' })
+.then(getPosts)
+.catch(err => console.log(err));
