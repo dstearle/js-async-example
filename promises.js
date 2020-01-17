@@ -78,8 +78,10 @@ function createPosts(post) {
 const promise1 = Promise.resolve('Hello World!');
 const promise2 = 10;
 const promise3 = new Promise((resolve, reject) => setTimeout(resolve, 2000, 'Goodbye'));
+// Promise using fetch to retrieve a list of user data
+const promise4 = fetch('https://jsonplaceholder.typicode.com/users').then(res => res.json());
 
 // Array of promises to be ran
-Promise.all([promise1, promise2, promise3]).then(
+Promise.all([promise1, promise2, promise3, promise4]).then(
     (values) => console.log(values)
 );
