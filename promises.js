@@ -46,6 +46,7 @@ function createPosts(post) {
             // If no errors then
             if(!error) {
 
+                // When resolve runs .then(getPosts) occurs
                 resolve();
 
             }
@@ -53,6 +54,7 @@ function createPosts(post) {
             // Else show error
             else {
 
+                // When reject runs .then(getPosts) does not run
                 reject('Error: Something went wrong!');
 
             }
