@@ -29,7 +29,7 @@ function getPosts() {
 }
 
 // Function to create a new post
-function createPosts(post) {
+function createPost(post) {
 
     // Promise
     return new Promise((resolve, reject) => {
@@ -65,23 +65,39 @@ function createPosts(post) {
 
 }
 
-// Basic promise example
+// *** Basic Promise Example ***
 
-// Runs createPosts function with promise
-// createPosts({ title: 'Post Three', body: 'This is post three' })
+// Runs createPost function with promise
+// createPost({ title: 'Post Three', body: 'This is post three' })
 // .then(getPosts)
 // .catch(err => console.log(err));
 
-// Promise.all example
+// *** Promise.all Example ***
 
 // Multiple promises to be checked
-const promise1 = Promise.resolve('Hello World!');
-const promise2 = 10;
-const promise3 = new Promise((resolve, reject) => setTimeout(resolve, 2000, 'Goodbye'));
-// Promise using fetch to retrieve a list of user data
-const promise4 = fetch('https://jsonplaceholder.typicode.com/users').then(res => res.json());
+// const promise1 = Promise.resolve('Hello World!');
+// const promise2 = 10;
+// const promise3 = new Promise((resolve, reject) => setTimeout(resolve, 2000, 'Goodbye'));
+// // Promise using fetch to retrieve a list of user data
+// const promise4 = fetch('https://jsonplaceholder.typicode.com/users').then(res => res.json());
 
-// Array of promises to be ran
-Promise.all([promise1, promise2, promise3, promise4]).then(
-    (values) => console.log(values)
-);
+// // Array of promises to be ran
+// Promise.all([promise1, promise2, promise3, promise4]).then(
+//     (values) => console.log(values)
+// );
+
+// *** Async / Await Example ***
+
+// Asynchrous function that waits for the post to be created before retrieving all of the posts
+async function init() {
+
+    // The post to be created prior to the retrieval
+    await createPost({ title: 'Post Three', body: 'This is post three' });
+
+    // Returns all posts after the 'await' above has been done
+    getPosts();
+
+}
+
+// Runs the async function
+init();
