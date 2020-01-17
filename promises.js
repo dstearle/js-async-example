@@ -43,7 +43,7 @@ function createPosts(post) {
             // Boolean
             const error = false;
 
-            // If no errors then
+            // If error is flase then resolve the promise
             if(!error) {
 
                 // When resolve runs .then(getPosts) occurs
@@ -51,7 +51,7 @@ function createPosts(post) {
 
             }
 
-            // Else show error
+            // Else reject the promise
             else {
 
                 // When reject runs .catch(...) occurs
@@ -65,7 +65,21 @@ function createPosts(post) {
 
 }
 
+// Basic promise example
+
 // Runs createPosts function with promise
-createPosts({ title: 'Post Three', body: 'This is post three' })
-.then(getPosts)
-.catch(err => console.log(err));
+// createPosts({ title: 'Post Three', body: 'This is post three' })
+// .then(getPosts)
+// .catch(err => console.log(err));
+
+// Promise.all example
+
+// Multiple promises to be checked
+const promise1 = Promise.resolve('Hello World!');
+const promise2 = 10;
+const promise3 = new Promise((resolve, reject) => setTimeout(resolve, 2000, 'Goodbye'));
+
+// Array of promises to be ran
+Promise.all([promise1, promise2, promise3]).then(
+    (values) => console.log(values)
+);
