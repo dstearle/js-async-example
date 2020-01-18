@@ -26,6 +26,10 @@
 
 - What Exactly Is A Callback? : A callback function is a function passed into another function as an argument, 
 which is then invoked inside the outer function to complete some kind of routine or action.
+- Callbacks Can Be Synchrous Or Asynchrous: Depending on how the Callback function is used, it can be either.
+- When To Use Synch OR Async?: Use synchrous callbacks when the tasks must be executed in sequence (you cannot but a movie ticket until
+the people in front of you have finished buying theirs) and use asynchrous callbacks when the tasks are not dependent on eachother 
+(you can order food at a restaurant while others also order food, they do not need to wait for you to finish your order to start).
 
 <br>
 
