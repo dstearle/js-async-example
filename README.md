@@ -38,6 +38,10 @@ the people in front of you have finished buying theirs) and use asynchrous callb
 - What Exactly Is A Promise?: The core idea behind promises is that a promise represents the result of an asynchronous operation.
 - Promises Are Asynchrous: Promises are asynchrous meaning that they do multiple tasks at once where a synchrous operation would be queued,
 as in the process can only continue until the current action is completed.
-- Promises Have Three States: Pending, Fulfilled, and Rejected.
+- Promises Have Three States: 
+  - Pending: When the final value is not available yet. This is the only state that may transition to one of the other two states.
+  - Fulfilled: When and if the final value becomes available. A fulfillment value becomes permanently associated with the promise. This may be any value, including undefined.
+  - Rejected: If an error prevented the final value from being determined.  A rejection reason becomes permanently associated with the promise. This may be any value, including undefined, though it is generally an Error object, like in exception handling.
+  
 - Why Use A Promise Over A Callback?: With Promises you can use ".then" to avoid "Callback Hell" in which you have too many callbacks nested within 
 eachother meaning that Promises are easier to read and maintain.
